@@ -18,12 +18,21 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/produtos/{qnt}', function ($qnt) {
+    $nomes = array('Sabonete','Sabao','Detergente','Miojo','Tempero','chá','café','suco','torrada','mostarda','maionese','geleia','bolacha','leite',
+    'chimarrao','vodka','amaciante','desodorante');
 
-Route::get('/atividade4', function () {
-    return view('exercicio4');
-});
+    $random = array();
+    for($i = 1;$i <= $qnt; $i++){
+        $tempArray = array_rand($nomes,3);
+        $tempNome = $nomes[$tempArray[0]].' '.$nomes[$tempArray[1]].' '.$nomes[$tempArray[2]];
+        array_push($random,$tempNome);
+    }
+    
+    return view('exercicio2')->with(compact('random'));
+})->where('qnt', '([1-9]|[1-9][0-9])+');
 
-Route::get('/atividade3/{X}/{Y}/{Z}', function ($x,$y,$z) {
+Route::get('/serie/{X}/{Y}/{Z}', function ($x,$y,$z) {
     $numeros = array();
     $soma = 0;
     for($i = $x; $i <= $y; $i+=$z){
@@ -33,6 +42,10 @@ Route::get('/atividade3/{X}/{Y}/{Z}', function ($x,$y,$z) {
     $quantidade = count($numeros);
     $media = $soma / $quantidade;
     return view('exercicio3')->with(compact('numeros', 'soma','quantidade','media'));
+});
+
+Route::get('/atividade4', function () {
+    return view('exercicio4');
 });
 
 //A regra de negocio dessa atividade foi feita no controler

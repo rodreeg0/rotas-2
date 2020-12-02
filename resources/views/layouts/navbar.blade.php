@@ -15,16 +15,12 @@
   
       <div class="collapse navbar-collapse text-center" id="navbarToggleId">
         <ul class="navbar-nav mx-auto justify-content-around">
+          
           <li class="nav-item" >
-            <a class="nav-link" href="/"
-              >Home<span class="sr-only">(current)</span></a
-            >
+            <a class="nav-link" href="/produtos/10">Atividade 2</a>
           </li>
           <li class="nav-item" >
-            <a class="nav-link" href="/atividade2">Atividade 2</a>
-          </li>
-          <li class="nav-item" >
-            <a class="nav-link" href="/atividade3">Atividade 3</a>
+            <a class="nav-link" href="/serie/10/30/2">Atividade 3</a>
           </li>
           <li class="nav-item" >
             <a class="nav-link" href="/atividade4">Atividade 4</a>

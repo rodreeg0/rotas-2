@@ -13,6 +13,9 @@
                 /* bring your own prefixes */
                 transform: translate(-50%, -50%);
             }
+            .overflow-y{
+                overflow-y: scroll; 
+            }
         </style>
         
         <title>Rotas - 2</title>
